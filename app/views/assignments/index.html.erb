@@ -1,0 +1,10 @@
+ <h1> Assignment list </h1>
+
+            <% @assignments.each do |assignment| %>
+    <ol>
+        <li>Name of Assignment: <%= assignment.title %></li>
+        <li>Subject: <%= assignment.subject %></li>
+        <li>Date Posted: <%= assignment.date %></li>
+        </ol>
+        <hr>
+    <% end %>

@@ -1,0 +1,30 @@
+<h1>New Assignment</h1>
+
+ <%= form_for @assignment do |f| %>
+            
+    <%= f.label :title, 'Assignment Name:' %>
+     <%= f.text_field :title %>  <br>   
+
+     <%= f.label :subject %>
+     <%= f.text_field :subject %>
+<hr>
+     <%= f.label :date, 'Assignment Due Date:'  %>
+     <%= f.date_field :date %> <br><br>
+
+    <%= f.label :question, 'Questions/Comments:'  %>
+     <%= f.text_area :question %> <br><br>
+
+     <%= f.label :completed, 'Did you complete Assignment?:'  %> 
+     <%= f.check_box:completed %> <br> <br>
+     <%= f.submit 'New Assignment' %>
+<% end %>
+
+
+
+
+
+
+
+
+
+    
