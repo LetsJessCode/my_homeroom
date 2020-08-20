@@ -2,7 +2,7 @@
 
          <% @assignments.each do |assignment| %>
           
-         <h3>Assignment: <%= link_to assignment.title, assignments_path(assignment.student, assignment.subject) %> | Subject: <%= assignment.subject.name %> </h3>
+         <h3>Assignment: <%= link_to assignment.title, assignment_path(assignment.student, assignment.subject) %> |  <%= assignment.subject.name %> </h3>
            <h4> Student: <%= link_to assignment.student.name, students_path %> Grade: <%= assignment.student.grade %></h4>
    
    <ol>   

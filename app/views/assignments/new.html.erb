@@ -1,14 +1,18 @@
 <h1>New Assignment</h1>
 
+        
       <%= form_for @assignment do |f| %>
+
+      <h4>Select / Create Subject: 
+            <%= f.collection_select :subject_id, Subject.all, :id, :name, prompt: true %> 
           <%= f.fields_for :subject, @assignment.build_subject do |sub_obj| %>
-          <%= sub_obj.label :name, 'Subject:' %>
-          <%= sub_obj.text_field :name %>
+          <%= sub_obj.text_field :name, placeholder: 'Subject Name' %> 
       <% end %>
+<br><br>
            <%= f.label :title, 'Assignment Name:' %>
-           <%= f.text_field :title %> 
+           <%= f.text_field :title %> </h4>
      
-<hr>
+<hr>    <h4>
           <%= f.label :date, 'Assignment Due Date:'  %>
           <%= f.date_field :date %> 
           |
@@ -16,15 +20,15 @@
           <%= f.check_box:completed %> <br> <br>
 
           <%= f.label :question, 'Questions/Comments:'  %>
-          <%= f.text_area :question %> <br><br>
+          <%= f.text_area :question %> <br><br></h4>
 <hr>
-      Enter your Name and Grade Level Below: <br>
+     <h4> Enter your Name and Grade Level Below: <br>
   <%= f.fields_for :student, @assignment.build_student do |student_obj| %> <br>
         <%= student_obj.label :name, 'First Name:' %>
         <%= student_obj.text_field :name %>
 
         <%= student_obj.label :grade, 'Grade:' %>
-        <%= student_obj.text_field :grade %> 
+        <%= student_obj.text_field :grade %> </h4>
 
      <% end %>
 

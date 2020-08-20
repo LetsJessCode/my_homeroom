@@ -26,15 +26,15 @@ class AssignmentsController < ApplicationController
 
    def update
     if @assignment.update(assign_params)
-        redirect_to assignment_path(@assignment) # /books/5
+        redirect_to assignment_path(@assignment) # /assignment/5
       else
         render :edit
       end
    end
 
-   def destroy # delete /books/:id
-    @assignment.destroy
-    redirect_to assignments_path
+   def destroy # delete /assignment/:id
+     @assignment.destroy
+        redirect_to assignments_path
   end
 
   private

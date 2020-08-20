@@ -1,6 +1,10 @@
-    <h1>View Assignments</h1>
-    <h3><%= @assignment.title %> | <%= @assignment.subject.name %></h3> <br>
+    <h1><%= @assignment.student.name %>'s <%=@assignment.subject.name%> Assignment</h1>
+    <hr>
+    <h3><%= @assignment.title %></h3>
     <h5>Due Date: <%= @assignment.date.strftime('%a, %d %b %Y') %> |  Completed? <%= @assignment.completed %></h5>
-    <h2> Question/Comment </h2>
-    <div><%= @assignment.question %>
+    <h4> Question/Comment </h4>
+    <div><%= @assignment.question %> <br><br>
+    <%= link_to 'Update Assignment', edit_assignment_path(@assignment.student, @assignment.subject) %>
         </div>
+
+        <%= link_to 'Delete Assignment', student_path(@assignment, @student), method: 'delete' %>
