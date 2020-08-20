@@ -4,10 +4,11 @@ class CreateAssignments < ActiveRecord::Migration[6.0]
       t.string :title
       t.boolean :completed
       t.text :question
-      t.string :subject
+      t.integer :subject_id
       t.date :date
       t.integer :student_id
       t.index ["student_id"], name: "index_assignments_on_student_id"
+      t.index ["subject_id"], name: "index_assignments_on_subject_id"
       t.timestamps
     end
   end
