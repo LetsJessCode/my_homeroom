@@ -5,11 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> -->
   </head>
 
   <body>
+  <nav>
+    <%=link_to "Create Assignment", new_assignment_path %> | 
+    <%=link_to "Homepage", root_path %>  | 
+    <%=link_to "Homeroom", assignments_path(@assignment) %> 
+
+    </nav>
+  
     <%= yield %>
   </body>
 </html>

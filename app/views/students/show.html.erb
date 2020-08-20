@@ -1,0 +1,4 @@
+<h1><%= @student.name </h1>
+    <% @student.assignments.each do |assignment| %>
+        <li><%= assignment.subject %></li>
+    <% end %>

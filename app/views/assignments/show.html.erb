@@ -1,6 +1,6 @@
     <h1>View Assignments</h1>
     <h3><%= @assignment.title %> | <%= @assignment.subject %></h3> <br>
-    <h5>Due Date <%= @assignment.date %> |  Completed? <%= @assignment.completed %></h5>
+    <h5>Due Date: <%= @assignment.date.strftime('%a, %d %b %Y') %> |  Completed? <%= @assignment.completed %></h5>
     <h2> Question/Comment </h2>
     <div><%= @assignment.question %>
         </div>

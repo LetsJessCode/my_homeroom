@@ -1,4 +1,4 @@
-<h1>New Assignment</h1>
+ <h1>Update Assignment</h1>
 
  <%= form_for @assignment do |f| %>
             
@@ -16,24 +16,9 @@
 
      <%= f.label :completed, 'Did you complete Assignment?:'  %> 
      <%= f.check_box:completed %> <br> <br>
-<hr>
-  <%= f.fields_for :student, @assignment.build_student do |student_obj| %> <br>
-        <%= student_obj.label :name, 'First Name:' %>
-        <%= student_obj.text_field :name %>
-
-        <%= student_obj.label :grade, 'Grade:' %>
-        <%= student_obj.text_field :grade %> <br><br>
-
-     <% end %>
-     <%= f.submit 'New Assignment' %>
+     <%= f.submit 'Update Assignment' %>
 <% end %>
+ 
+ <%= link_to 'Delete Assignment', assignment_path(@assignment), method: 'delete' %>
 
 
-
-
-
-
-
-
-
-    
